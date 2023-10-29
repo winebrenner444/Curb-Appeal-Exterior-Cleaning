@@ -42,7 +42,7 @@ a {
     color: #ffffff;
     padding: 10px 20px;
 }
-.reviews-box-container {
+.reviews-box-containers {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,4 +57,73 @@ a {
     padding: 20px;
     margin: 15px;
     cursor: pointer;
+    box-shadow: 3px 3px 8px 1px;
+}
+
+.name-first-letter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+    background-color: green;
+    color: #ffffff;
+}
+
+.reviews {
+    color: #f9d71c;
+}
+
+.name-user strong {
+    color: #727272;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+.box-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.client-comments {
+    font-size: 0.9rem;
+    color: #4b4b4b;
+}
+
+.reviews-box:hover {
+    transform: translateY(-10px);
+    transition: all ease 0.3s;
+    box-shadow: 8px 8px 8px 1px;
+}
+/* media queries for responsiveness*/
+
+@media(max-width:1200px){
+    .reviews-box{
+        width: 45%;
+        padding: 10px;
+    }
+}
+@media(max-width:700px){
+    .reviews-box{
+        width: 100%;
+    }
+}
+
+@media(max-width: 340px){
+    .box-top{
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+    }
+    .reviews{
+        margin-top: 10px;
+    }
+}
+
+::selection{
+    color:#ffffff;
+    background-color: #252525;
 }
