@@ -8,9 +8,10 @@ body {
     background-color: rgba(211, 211, 211, 0.7);
 }
 
-/* nav {
+nav {
     position: relative;
-} */
+}
+
 .nav-list {
     background-color: white;
     box-shadow: 0px 0px 10px rgba(128, 128, 128, 1);
@@ -155,16 +156,57 @@ body {
     .reviews-box{
         width: 100%;
     }
-    ul {
+    .nav-item {
         display: none;
     } 
-    nav {
+    nav.hamburger-menu {
         width: 40px;
         height: 25px;
-        background: #333;
-        border-radius: 3px;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+    }
+    nav.hamburger-menu::before,
+    nav.hamburger-menu::after {
+        content: '';
+        display: inline-block;
+        height: 2px;
+        width: 70%;
+        position: absolute;
+        left: 15%;
+        top: 50%;
+        transition: 
+        transform 0.2s ease,
+        top 0.2s ease;
+        background: #fff;
+        transform: translateY(-50%);
+    }
+    nav.hamburger-menu::before {
+        top: 30%;
+    }
+
+    nav.hamburger-menu::after {
+        top: 70%;
+    }
+
+    nav.hamburger-menu:focus::before {
+        top: 50%;
+        transform: rotate(30deg) translateY(-50%);
+    }
+
+    nav.hamburger-menu:focus::after {
+        top: 50%;
+        transform: rotate(-30deg) translateY(-50%);
+    }
+
+    ul {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        background: #444;
     }
 }
+
 
 @media(max-width: 340px){
     .box-top{
@@ -180,3 +222,4 @@ body {
     color:#ffffff;
     background-color: #252525;
 }
+
