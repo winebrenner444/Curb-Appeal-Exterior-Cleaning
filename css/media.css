@@ -1,0 +1,71 @@
+@media(max-width:700px){
+    .reviews-box{
+        width: 100%;
+    }
+   
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .hamburger-menu {
+        width: 40px;
+        height: 25px;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+    }
+
+    .hamburger-menu::before,
+    .hamburger-menu::after {
+        content: '';
+        display: inline-block;
+        height: 2px;
+        width: 70%;
+        position: absolute;
+        left: 15%;
+        top: 50%;
+        transition: 
+        transform 0.2s ease,
+        top 0.2s ease;
+        background: black;
+        transform: translateY(-50%);
+    }
+    .hamburger-menu::before {
+        top: 30%;
+    }
+
+    .hamburger-menu::after {
+        top: 70%;
+    }
+
+    .hamburger-menu:focus::before {
+        top: 50%;
+        transform: rotate(30deg) translateY(-50%);
+    }
+
+    .hamburger-menu:focus::after {
+        top: 50%;
+        transform: rotate(-30deg) translateY(-50%);
+        
+    }
+
+    .nav-list {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        background: #fff;
+        flex-direction: column;
+        z-index: 1;
+        border-radius: 3px;
+        padding: 5px 0;
+        box-shadow: 0 0 10px #222;
+        display: none;
+        text-align: center;
+        min-width: 125px;
+    }
+
+    
+
+ 
+}

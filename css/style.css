@@ -8,25 +8,28 @@ body {
     background-color: rgba(211, 211, 211, 0.7);
 }
 
-nav {
-    position: relative;
-}
 
-.nav-list {
+
+header {
     background-color: white;
     box-shadow: 0px 0px 10px rgba(128, 128, 128, 1);
     margin: 0;
     padding: .3rem 0;
     border-radius: 0.2rem;
-    display: flex;
+    display: flex; 
+    flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
+
 
 .nav-item {
     list-style: none;
     margin-right: 1rem;
-
+   
 }
 
 .nav-item a {
@@ -41,16 +44,18 @@ nav {
     text-decoration: underline;
 }
 
-.nav-item a:active {
-   text-decoration: underline;
-}
 
-.nav-item:first-child {
+
+#logo {
+    list-style: none;
     margin-right: auto;
     margin-left: .2rem;
    
 }
 
+body {
+    margin-top: 150px;
+}
 
 .main-reviews-container {
     display: flex;
@@ -156,18 +161,22 @@ nav {
     .reviews-box{
         width: 100%;
     }
-    .nav-item {
+   
+
+    .nav-list {
         display: none;
-    } 
-    nav.hamburger-menu {
+    }
+
+    .hamburger-menu {
         width: 40px;
         height: 25px;
         position: fixed;
         top: 20px;
         right: 20px;
     }
-    nav.hamburger-menu::before,
-    nav.hamburger-menu::after {
+
+    .hamburger-menu::before,
+    .hamburger-menu::after {
         content: '';
         display: inline-block;
         height: 2px;
@@ -178,33 +187,46 @@ nav {
         transition: 
         transform 0.2s ease,
         top 0.2s ease;
-        background: #fff;
+        background: black;
         transform: translateY(-50%);
     }
-    nav.hamburger-menu::before {
+    .hamburger-menu::before {
         top: 30%;
     }
 
-    nav.hamburger-menu::after {
+    .hamburger-menu::after {
         top: 70%;
     }
 
-    nav.hamburger-menu:focus::before {
+    .hamburger-menu.rotate::before {
         top: 50%;
         transform: rotate(30deg) translateY(-50%);
     }
 
-    nav.hamburger-menu:focus::after {
+    .hamburger-menu.rotate::after {
         top: 50%;
         transform: rotate(-30deg) translateY(-50%);
+        
     }
 
-    ul {
+    .nav-list {
         position: absolute;
         right: 0;
         top: 100%;
-        background: #444;
+        background: #fff;
+        flex-direction: column;
+        z-index: 1;
+        border-radius: 3px;
+        padding: 5px 0;
+        box-shadow: 0 0 10px #222;
+        display: none;
+        text-align: center;
+        min-width: 125px;
     }
+
+    
+
+ 
 }
 
 
@@ -219,7 +241,7 @@ nav {
 }
 
 ::selection{
-    color:#ffffff;
+    color:#fff;
     background-color: #252525;
 }
 
