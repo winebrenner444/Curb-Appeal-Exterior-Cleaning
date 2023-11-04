@@ -1,60 +1,69 @@
-let hamburgerMenu = document.querySelector('.hamburger-menu');
+let hamburgerMenu = document.querySelector(".hamburger-menu")
+let hamburgerIcon = document.querySelector('.hamburger-icon');
 let navList = document.querySelector('.nav-list');
 var navItems = document.querySelectorAll('.nav-item');
-
+let resizeTimer;
 
 
 function toggleNavList() {
-    if (navList.style.display === 'none' || navList.style.display === '') {
-        navList.style.display = 'flex';
-        navList.style.width = "100vw";
-        navList.style.height = "100vh";
-        navList.style.right = "-20px";
-        navList.style.top = "-20px";
-        navList.style.alignItems = "center";
-        navList.style.justifyContent = "center";  
-        navList.style.fontSize = "5vw"; 
-        
-            for (var i = 0; i < navItems.length; i++) {
-                navItems[i].style.margin = "3vh 0";
-                navItems[i].style.width = "50vw";
-            }
-
-    } else {
-        navList.style.display = 'none';
-    }
+   if(!hamburgerMenu.classList.contains('active')) {
+    hamburgerMenu.classList.add('active');
+   } else if (hamburgerMenu.classList.contains('active')) {
+    hamburgerMenu.classList.remove('active')
+   }
 }
 
-
 function toggleRotation() {
-    hamburgerMenu.classList.toggle('rotate');
+    if(!hamburgerIcon.classList.contains('rotate')) {
+        hamburgerIcon.classList.add('rotate');
+       } else if (hamburgerIcon.classList.contains('rotate')) {
+        hamburgerIcon.classList.remove('rotate')
+       }
 }
 
 function removeRotation() {
-    hamburgerMenu.classList.remove('rotate');
+    hamburgerIcon.classList.remove('rotate');
+}
+
+function toggleHamburgerMenu() {
+    toggleNavList();
+    toggleRotation();
+}
+
+function updateIcon() {
+    if (window.innerWidth <= 700 && !hamburgerMenu.classList.contains('active')) {
+        hamburgerIcon.classList.remove('rotate')
+    } else if(window.innerWidth <= 700 && hamburgerMenu.classList.contains('active')){
+        hamburgerIcon.classList.add('rotate')
+    }
 }
 
 function updateNavDisplay() {
-    if (window.innerWidth <= 700) {
+    if (window.innerWidth <= 700 && !hamburgerMenu.classList.contains('active')) {
         navList.style.display = 'none';
-        hamburgerMenu.addEventListener('click', function() {
-            toggleNavList();
-            toggleRotation();
-        });
+    } else if(window.innerWidth <= 700 && hamburgerMenu.classList.contains('active')){
+        navList.style.display = 'flex';
     } else {
         navList.style.display = 'flex';
-        hamburgerMenu.removeEventListener('click', toggleNavList);
     }
 }
-//updateNavDisplay();
 
+hamburgerMenu.addEventListener('click', () => {
+    toggleHamburgerMenu();
+    updateNavDisplay();
+});
+
+document.addEventListener('click', (event) => {
+    if (!hamburgerMenu.contains(event.target)) {
+        hamburgerMenu.classList.remove('active');
+        updateNavDisplay();
+    }
+});
 
 window.addEventListener('load', updateNavDisplay);
 
-visualViewport.onresize = updateNavDisplay;
-
-hamburgerMenu.addEventListener('blur', function() {
-    navList.style.display = 'none';
-    removeRotation();
+window.addEventListener('resize', () => {
+    updateNavDisplay();
+    updateIcon();
 });
 

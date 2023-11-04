@@ -57,7 +57,7 @@ p {
 
 .nav-item a {
     text-decoration: none;
-    color: black;
+    color: #094a80;;
     transition: all 100ms ease;
 }
 
@@ -76,7 +76,9 @@ p {
    
 }
 
-
+.close-hamburger-menu {
+    display: none;
+}
 
 .main-reviews-container {
     display: flex;
@@ -177,23 +179,22 @@ p {
     }
 }
 
-/*finish hamburger nav menu*/
 @media(max-width:700px){
     .reviews-box{
         width: 100%;
     }
 
 
-    .hamburger-menu {
+    .hamburger-icon {
         width: 40px;
         height: 25px;
         position: fixed;
-        top: 20px;
+        top: 40px;
         right: 20px;
     }
 
-    .hamburger-menu::before,
-    .hamburger-menu::after {
+    .hamburger-icon::before,
+    .hamburger-icon::after {
         content: '';
         display: inline-block;
         height: 2px;
@@ -207,20 +208,20 @@ p {
         background: #1b5937;
         transform: translateY(-50%);
     }
-    .hamburger-menu::before {
+    .hamburger-icon::before {
         top: 30%;
     }
 
-    .hamburger-menu::after {
+    .hamburger-icon::after {
         top: 70%;
     }
 
-    .hamburger-menu.rotate::before {
+    .hamburger-icon.rotate::before {
         top: 50%;
         transform: rotate(30deg) translateY(-50%);
     }
 
-    .hamburger-menu.rotate::after {
+    .hamburger-icon.rotate::after {
         top: 50%;
         transform: rotate(-30deg) translateY(-50%);
         
@@ -232,6 +233,7 @@ p {
         right: 0;
         top: 100%;
         background: #fff;
+        opacity: 0.95;
         flex-direction: column;
         z-index: 1;
         border-radius: 3px;
@@ -241,13 +243,44 @@ p {
         min-width: 125px;
     }
 
-    
+    .hamburger-menu.active .nav-list {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        right: 0px;
+        top: 0px;
+        align-items: center;
+        justify-content: center;
+        font-size: 5vw;
+    }
 
+    .hamburger-menu.active .nav-item {
+        margin: 3vh 0;
+        width: 50vw;
+    }
+
+    .close-hamburger-menu {
+        display: none;
+        position:fixed;
+        bottom: 5vh;
+        left: 48%;
+        transform: translateY(-50%);
+        color: #094a80;
+        background: none;
+        font-size: 2em;
+        z-index: 1000;
+        border: none;
+    }
+    .hamburger-menu.active .close-hamburger-menu {
+        display: inline-block;
+        cursor: pointer;
+        
+    }
  
 }
 
 
-@media(max-width: 340px){
+@media(max-width: 485px){
     .box-top{
         flex-wrap: wrap;
         margin-bottom: 10px;
@@ -256,6 +289,7 @@ p {
         margin-top: 10px;
     }
 }
+
 
 ::selection{
     color:#fff;
