@@ -3,6 +3,7 @@ let hamburgerIcon = document.querySelector('.hamburger-icon');
 let navList = document.querySelector('.nav-list');
 var navItems = document.querySelectorAll('.nav-item');
 let resizeTimer;
+let currentSlide = 0;
 
 
 function toggleNavList() {
@@ -47,6 +48,9 @@ function updateNavDisplay() {
         navList.style.display = 'flex';
     }
 }
+
+
+
 
 hamburgerMenu.addEventListener('click', () => {
     toggleHamburgerMenu();

@@ -5,8 +5,7 @@
     box-sizing: border-box;
 }
 body {
-    background-color: rgba(211, 211, 211, 0.7);
-    margin: 150px 20px 20px 20px;
+    margin-top: 150px;
 }
 
 
@@ -25,7 +24,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    
+    z-index: 3;
 }
 
 h1 {
@@ -33,22 +32,126 @@ h1 {
     text-align: center;
     margin: 1rem 0;
 }
+
 p {
     text-align: center;
+    letter-spacing: .5px;
+    font-size: 18px;
 }
-.curb { 
-    color: #094a80;
+
+.main-intro-container {
+    display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+    max-width: 1400px;
+    margin: auto;
+    padding: 2rem;
 }
- .curb, .appeal {
-    text-decoration: underline;
-    text-decoration-color: #092d46;
-    text-decoration-thickness: 2px;
+.main-intro-photo {
+    display: flex;
+    flex-shrink: 2;
+    align-items: flex-end;
+    width: 96%;
+    max-width: 600px;
+    max-height: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 0.3215rem 0.3215rem 0.3215rem 0.3215rem;
+    height: 100%;
+    box-shadow: 10px 10px #094a80;
  }
 
- .main-intro {
-    
+ #nice-home {
+    width: 100%;
+    border-radius: 0.3215rem 0.3125rem 0.3215rem 0.3125rem;
+
  }
 
+
+.main-intro-text {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    font-size: 1rem;
+}
+.main-intro-text h1 {
+    margin-bottom: 3rem;
+    font-size: 200%;
+}
+
+.free-estimate {
+    width: 100%;
+    background-color: rgba(27, 89, 55, 1);
+    margin: 50px auto;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 2.5rem;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.call-button {
+    background-color: #094a80;
+    color: #fff;
+    border-radius: 0 1.875rem 1.875rem 1.875rem;
+    border: 0.5px solid #fff;
+    padding: 15px;
+    min-height: 30px;
+    min-width: 120px;
+}
+
+.call-button:hover {
+    background-color: #094a80;
+}
+
+.main-why-container {
+    display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+    max-width: 1400px;
+    margin: auto;
+    padding: 2rem;
+}
+.main-why-photo {
+    display: flex;
+    align-items: flex-end;
+    width: 96%;
+    max-width: 600px;
+    max-height: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 0.3215rem 0.3215rem 0.3215rem 0.3215rem;
+    height: 100%;
+    box-shadow: 10px 10px #094a80;
+ }
+
+ #nice-home {
+    width: 100%;
+    border-radius: 0.3215rem 0.3125rem 0.3215rem 0.3125rem;
+
+ }
+
+ .main-why-text {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0 40px;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    font-size: 1rem;
+}
+.main-why-text h1 {
+    margin-bottom: 3rem;
+    font-size: 200%;
+}
 .nav-item {
     list-style: none;
     margin-right: 1rem;
@@ -57,7 +160,7 @@ p {
 
 .nav-item a {
     text-decoration: none;
-    color: #094a80;;
+    color: #094a80;
     transition: all 100ms ease;
 }
 
@@ -109,7 +212,8 @@ p {
 .main-reviews-heading h1 {
     font-size: 1.2rem;
     font-weight: 500;
-    background-color: #202020;
+    background-color: #094a80;
+    border-radius: 0.5rem;
     color: #ffffff;
     padding: 10px 20px;
 }
@@ -170,6 +274,59 @@ p {
     transition: all ease 0.3s;
     box-shadow: 8px 8px 8px 1px;
 }
+
+.slider-wrapper {
+    position: relative;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.container {
+    padding: 2rem;
+}
+
+.slider {
+    display: flex;
+    aspect-ratio: 16/9;
+    overflow-x: scroll;
+    scroll-snap-type: mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75 hsla(0, 0%, 0%, 0.25);
+    border-radius: 0.5rem;
+    width: 100%
+}
+.slider  img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+    width: 100%;
+}
+
+.slider-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1
+}
+
+.slider-nav a {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #1b5937;
+    opacity: 0.75;
+    transition: transform ease 250ms;
+}
+
+.slider-nav a:hover {
+    opacity: 1;
+}
+
+
+
 /* media queries for responsiveness*/
 
 @media(max-width:1200px){
