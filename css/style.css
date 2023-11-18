@@ -29,18 +29,14 @@ header {
 }
 
 .main-heading {
-    color: #1b5937;
+    color: rgb(9, 74, 128);
     text-align: center;
     margin: 0 0 1rem 0;
     text-transform: uppercase;
     text-shadow: 
-    /* 1px 1px 0px #767b7f,
-    1px 2px 0px #767b7f, */
-    1px 5px 5px rgba(9, 74, 128, 0.5),
-    1px 10px 10px rgba(9, 74, 128, 0.4),
-    1px 15px 30px rgba(9, 74, 128, 0.3),
-    1px 20px 40px rgba(19, 74, 128, 0.2);
+    1px 2px 0px #4884a9;
 }
+
 
 p {
     text-align: center;
@@ -60,13 +56,9 @@ p {
 .main-intro-photo {
     display: flex;
     flex-shrink: 2;
-    align-items: flex-end;
+    align-self: center;
     width: 96%;
     max-width: 600px;
-    max-height: auto;
-    top: 0;
-    left: 0;
-    bottom: 0;
     border-radius: 0.3215rem 0.3215rem 0.3215rem 0.3215rem;
     height: 100%;
     box-shadow: 10px 10px #094a80;
@@ -133,22 +125,21 @@ p {
    justify-content: space-between;
     max-width: 1400px;
     margin: auto;
-    margin-top: 75px;
     padding: 2rem;
 }
 .main-why-photo {
     display: flex;
     flex-shrink: 2;
-    align-items: flex-end;
+    align-self: center;
     width: 96%;
+    margin-top: 4rem;
     max-width: 600px;
-    max-height: auto;
     border-radius: 0.3215rem 0.3215rem 0.3215rem 0.3215rem;
     height: 100%;
     box-shadow: -10px -10px #094a80;
  }
 
- #nice-home {
+ #choose-us-photo {
     width: 100%;
     border-radius: 0.3215rem 0.3125rem 0.3215rem 0.3125rem;
 
@@ -156,9 +147,8 @@ p {
 
  .main-why-text {
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
-    margin: 0 40px;
+    padding-right: 2rem;
     align-items: center;
     justify-content: center;
     width: 50%;
@@ -210,7 +200,7 @@ p {
 .main-reviews-heading {
     letter-spacing: 1px;
     margin: 30px 0px;
-    padding: 10px 20px;
+    padding: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -219,17 +209,16 @@ p {
 
 .main-reviews-heading h2 {
     font-size: 1.2rem;
-    font-weight: 200;
+    font-weight: 400;
     color: #252525;
-    margin-bottom: 10px;
     letter-spacing: 2px;
 }
 
 .main-reviews-heading h1 {
     font-size: 1.2rem;
     font-weight: 500;
-    background-color: #094a80;
-    border-radius: 0.5rem;
+    background-color: #1b5937;
+    border-radius: 0 1.875rem 1.875rem 1.875rem;
     color: #ffffff;
     padding: 10px 20px;
 }
@@ -238,12 +227,13 @@ p {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 100%;
+    max-width: 1400px;
 }
 
 .reviews-box {
     width: 500px;
-    box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+    min-height: 300px;
+    max-height: fit-content;
     background-color: #ffffff;
     padding: 20px;
     margin: 15px;
@@ -345,6 +335,50 @@ p {
 
 /* media queries for responsiveness*/
 
+
+@media screen and (max-width: 1200px) {
+    .main-intro-container,
+    .main-why-container {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+
+    .main-intro-container {
+        flex-direction: column-reverse;
+    }
+
+    .main-intro-text,
+    .main-why-text {
+        padding: 0;
+        padding-bottom: 2rem;
+    }
+  
+    .main-why-container {
+        margin-top: 0;
+    }
+
+    .main-intro-photo,
+    .main-intro-text,
+    .main-why-photo,
+    .main-why-text {
+      width: 100%; /* Full width for both photo and text on smaller screens */
+      max-width: 100%; /* Ensure the elements take the full width */
+      margin-bottom: 2rem; /* Add some spacing between photo and text */
+    }
+
+    .main-heading {
+        width: 100%;
+        order: -1;
+    }
+  }
+  
+  /* Adjustments for even smaller screens */
+  @media screen and (max-width: 700px) {
+    .main-intro-container,
+    .main-why-container {
+      padding: 0 1rem; /* Adjust padding for better spacing */
+    }
+  }
+
 @media(max-width:1200px){
     .reviews-box{
         width: 45%;
@@ -355,6 +389,7 @@ p {
 @media(max-width:700px){
     .reviews-box{
         width: 100%;
+        max-height: fit-content;
     }
 
 
