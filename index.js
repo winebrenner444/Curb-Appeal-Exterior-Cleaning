@@ -71,3 +71,24 @@ window.addEventListener('resize', () => {
     updateIcon();
 });
 
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+    
+    // Get form data
+    const formData = new FormData(this);
+    
+    // Convert data to object format
+    const formObj = {};
+    formData.forEach(function(value, key){
+      formObj[key] = value;
+    });
+    
+    // Display the form data (you can modify this part to suit your needs)
+    console.log('Form Data:', formObj);
+    
+    // Here, you can add code to send the form data to your server or perform any other desired action
+    
+    // Optional: Reset the form after submission
+    this.reset();
+  });
+  
