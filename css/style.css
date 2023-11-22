@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 body {
-    margin-top: 150px;
+    padding-top: 112px;
     background-color: #FBFAF5;
 }
 
@@ -259,12 +259,21 @@ p {
 .reviews-box {
     width: 500px;
     min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+    align-items: center;
     max-height: fit-content;
     background-color: #ffffff;
     padding: 20px;
     margin: 15px;
     cursor: pointer;
     box-shadow: 3px 3px 8px 1px;
+}
+
+.client-comments p {
+    display: flex;
 }
 
 .name-first-letter {
@@ -296,10 +305,14 @@ p {
     align-items: center;
     margin-bottom: 20px;
 }
-.client-comments {
+.client-comments p {
     font-size: 0.9rem;
     color: #4b4b4b;
+    align-items: center;
 }
+
+
+
 
 .reviews-box:hover {
     transform: translateY(-10px);
@@ -378,45 +391,63 @@ p {
 }
 
 /* Styles for the contact page */
-.contact-list-container {
-    background-color:#1b5937;
+
+
+
+
+.contact-container {
+    text-align: center;
+    padding: 50px 20px;
+    width: 99%; 
+    margin: 0 auto; 
+    background: linear-gradient(to right, rgba(27, 89, 55, 1), rgb(9, 74, 128));
     color: #fff;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
+    border-bottom: 1px solid rgb(9, 74, 128);
+    box-shadow: 0px 5px 10px rgba(128, 128, 128, 1);
     border-radius: 0 1.875rem 1.875rem 1.875rem;
 }
 
-.contact-list li {
-    list-style: none;
-}
-
-.contact-header-container {
+.contact-content {
+    padding: 20px;
     display: flex;
     justify-content: center;
-    align-items: center; 
-     
+    width: 100%;
 }
 
 .contact-header {
-    text-align: center; 
-    max-width: 80%; 
-    margin: 0 auto; 
-    color: rgb(9, 74, 128);
-    text-transform: uppercase;
-    text-shadow: 
-    1px 2px 0px #4884a9;
+    text-decoration: underline;
 }
 
+.contact-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+.contact-text p {
+    text-align: center;
+    letter-spacing: 1px;
+    max-width: 800px;
+    padding: 20px;
+}
 
+.phone-email {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+.phone-email a {
+    color: #fff;
+}
 
 /* Styles for the contact form */
 .form-container {
-    background-color: #252525;
+    background-color:rgba(27, 89, 55, 1);
     color: #fff;
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 1000px;
+    margin: 20px auto 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 0 1.875rem 1.875rem 1.875rem;
@@ -444,7 +475,8 @@ p {
   input[type="email"],
   input[type="tel"],
   textarea {
-    background: #1b5937;
+    background:rgba(0, 86, 179, 0.45);
+    color: #fff;
     width: 100%;
     padding: 8px;
     border-radius: 0 1.875rem 1.875rem 1.875rem;
@@ -454,9 +486,9 @@ p {
   .submit-button {
     padding: 10px 20px;
     width: 100%;
-    background-color: #094a80;
+    background:rgba(0, 86, 179, 0.45);
     color: #fff;
-    border: none;
+    border: 1px solid #ccc;    
     border-radius: 0 1.875rem 1.875rem 1.875rem;
     cursor: pointer;
   }
